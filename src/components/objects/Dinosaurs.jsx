@@ -1,5 +1,5 @@
 import { useMemo, useRef } from 'react'
-import { useFrame } from '@react-three/fiber'
+import { useFrame, useThree } from '@react-three/fiber'
 import { CatmullRomCurve3, DoubleSide, Shape, Vector3 } from 'three'
 
 const dinoBlue = '#4e9fc4'
@@ -168,13 +168,18 @@ export function Pterodactyl({ reduceMotion, ...props }) {
   const flyer = useRef()
   const leftWing = useRef()
   const rightWing = useRef()
+  const { size } = useThree()
+  const isMobile = size.width <= 720
+  const flightHeight = isMobile ? 2.85 : 3.7
+  const orbitRadius = isMobile ? 1.45 : 1.72
+  const flyerScale = isMobile ? 0.58 : 0.7
 
   useFrame((state) => {
     if (reduceMotion || !orbit.current || !flyer.current || !leftWing.current || !rightWing.current) return
     const time = state.clock.elapsedTime
     const flap = 0.08 + Math.sin(time * 5.2) * 0.28
     orbit.current.rotation.y = time * 0.32
-    flyer.current.position.y = 3.7 + Math.sin(time * 1.8) * 0.1
+    flyer.current.position.y = flightHeight + Math.sin(time * 1.8) * 0.1
     flyer.current.rotation.z = Math.sin(time * 0.7) * 0.07
     leftWing.current.rotation.z = flap
     rightWing.current.rotation.z = -flap
@@ -182,7 +187,12 @@ export function Pterodactyl({ reduceMotion, ...props }) {
 
   return (
     <group ref={orbit} rotation={[0, -0.8, 0]} {...props}>
-      <group ref={flyer} position={[0, 3.7, 1.72]} rotation={[0, Math.PI / 2, 0]} scale={0.7}>
+      <group
+        ref={flyer}
+        position={[0, flightHeight, orbitRadius]}
+        rotation={[0, Math.PI / 2, 0]}
+        scale={flyerScale}
+      >
         <mesh scale={[0.17, 0.15, 0.54]} castShadow>
           <sphereGeometry args={[0.5, 14, 10]} />
           <meshStandardMaterial color={pteroGreen} roughness={0.86} />
