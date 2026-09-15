@@ -13,26 +13,26 @@ const PlanetScene = lazy(() => import('./components/PlanetScene'))
 const journey = [
   {
     time: '2019',
-    title: 'Curiosity landed in Psychology',
-    copy: 'I wanted to know more about myself, how people think and make decisions.',
+    title: 'I started with people, not pixels.',
+    copy: 'Psychology gave me a reason to keep asking why people think, choose, and behave the way they do.',
     note: 'Bachelor of Science in Psychology',
   },
   {
     time: '2023 - 2025',
-    title: 'My first job as a teacher.',
-    copy: 'Curiosity for how people learn evolved into teaching. I wanted to understand how to best support others through their own learning journeys.',
+    title: 'Then I became a teacher.',
+    copy: 'Teaching showed me that the way something is explained can completely change how it feels to learn it.',
     note: 'Teaching, Curriculum Development',
   },
   {
     time: '2026',
-    title: 'My first build as an IT student.',
-    copy: 'I realised that many of the challenges I observed in education stemmed from systems and environments that weren’t designed with intention.',
-    note: 'Web development, daily painpoints',
+    title: 'I started building the tools I wanted to use.',
+    copy: 'As an IT student, I began turning everyday frustrations into small, practical web projects.',
+    note: 'Web development, everyday pain points',
   },
   {
     time: 'Now',
-    title: 'Building playful systems',
-    copy: 'Today I create thoughtful digital work with a soft spot for three-dimensional worlds and tiny moments of delight.',
+    title: 'Still curious. Now with code.',
+    copy: 'I like useful software, playful details, and websites that feel like a real person made them.',
     note: 'Three.js, creative development',
   },
 ]
@@ -41,7 +41,7 @@ const projects = [
   {
     title: 'Hotspot Monitor',
     type: 'Search intelligence web app',
-    description: 'A web app where users enter a keyword and Sonar continuously tracks and retrieves relevant information from sources such as Bing in one organized feed.',
+    description: 'I built this to keep an eye on a topic without repeating the same search every day. Add a keyword and it gathers new results into one feed.',
     image: '/hotspot-monitor.png',
     link: 'https://github.com/1QvQ/hotspot-monitor',
     className: 'project-feature project-feature--wide',
@@ -49,7 +49,7 @@ const projects = [
   {
     title: 'ECE101',
     type: 'Early childhood education platform',
-    description: 'A knowledge platform for early childhood educators to discover activity ideas, search relevant teaching resources, and turn practical guidance into meaningful learning experiences.',
+    description: 'A resource finder for early childhood teachers, inspired by the very real problem of needing a good activity idea five minutes ago.',
     image: '/ECE101.png',
     link: 'https://github.com/1QvQ/ECE101',
     className: 'project-feature project-feature--portrait',
@@ -57,7 +57,7 @@ const projects = [
   {
     title: 'Keytone',
     type: 'Mechanical keyboard sound library',
-    description: 'A visual library for mechanical keyboard enthusiasts to catalogue builds, upload typing recordings, explore their sound profiles, and compare switches and modifications side by side.',
+    description: 'A home for keyboard builds and typing sounds, because saying “this one is a little more thocky” is not a useful filing system.',
     image: '/keytone.png',
     link: 'https://github.com/1QvQ/KeyTone',
     className: 'project-feature project-feature--showcase',
@@ -181,11 +181,11 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="eyebrow">Creative developer</p>
-            <h1>I build small worlds.</h1>
-            <p className="hero__intro">Thoughtful interfaces, playful code, and digital experiences made with care.</p>
+            <p className="eyebrow">Hi, I’m Kristen.</p>
+            <h1>I make things I wish existed.</h1>
+            <p className="hero__intro">I studied psychology, became a teacher, and somehow ended up building websites. Honestly, it makes more sense than it sounds.</p>
             <a className="text-link" href="#work">
-              Explore my work <span aria-hidden="true">↓</span>
+              See what I’ve been making <span aria-hidden="true">↓</span>
             </a>
           </motion.div>
 
@@ -226,24 +226,24 @@ function App() {
           </motion.div>
 
           <div className="hero__aside" aria-label="Portfolio focus">
-            <p>Frontend</p>
-            <p>Interaction</p>
-            <p>3D experiments</p>
+            <p>Psychology</p>
+            <p>Teaching</p>
+            <p>Now: code</p>
           </div>
         </section>
 
         <section className="journey section-wrap" id="journey">
           <Reveal className="section-heading">
-            <h2>A journey made by building.</h2>
-            <p>Every project added a new tool, a sharper question, or a better way to see the problem.</p>
+            <h2>How I got here.</h2>
+            <p>Not a straight line, but definitely an interesting one.</p>
           </Reveal>
           <JourneyTimeline />
         </section>
 
         <section className="work section-wrap" id="work">
           <Reveal className="work__heading">
-            <h2>Selected work</h2>
-            <p>Product ideas shaped around clarity, character, and useful interactions.</p>
+            <h2>A few things I’ve made</h2>
+            <p>Mostly inspired by problems I ran into, plus one very specific keyboard obsession.</p>
           </Reveal>
 
           <div className="project-layout">
@@ -282,8 +282,8 @@ function App() {
 
         <section className="closing section-wrap" id="contact">
           <Reveal className="closing__inner">
-            <p className="closing__small">The next chapter</p>
-            <h2>Let’s make something with a little soul.</h2>
+            <p className="closing__small">Say hello</p>
+            <h2>Got an idea? I’d like to hear it.</h2>
             <div className="closing__actions">
               <a className="primary-button" href="https://github.com/1QvQ" target="_blank" rel="noreferrer">
                 GitHub <span aria-hidden="true">↗</span>
@@ -310,7 +310,7 @@ function App() {
       </main>
 
       <footer className="site-footer">
-        <p>Designed and built by Kristen Dai.</p>
+        <p>Built by Kristen, with too many keyboards nearby.</p>
         <p>© {new Date().getFullYear()}</p>
       </footer>
     </div>
